@@ -9,6 +9,7 @@ defmodule Intro do
 
   """
   def hello_world do
+    hello("World")
   end
 
   @doc ~S"""
@@ -23,5 +24,6 @@ defmodule Intro do
       "Hello, Matthew!"
   """
   def hello(name) do
+    "Hello, #{name}!"
   end
 end

@@ -13,6 +13,7 @@ defmodule Intro.Arithmetic do
 re
   """
   def add2(a, b) do
+    a+b
   end
 
   @doc ~S"""
@@ -30,6 +31,7 @@ re
       -1
   """
   def subtract2(a, b) do
+    a-b
   end
 
   @doc ~S"""
@@ -47,6 +49,7 @@ re
       12
   """
   def multiply2(a, b) do
+    a*b
   end
 
   @doc ~S"""
@@ -67,10 +70,11 @@ re
       0.5
   """
   def divide2(a, b) do
+    a/b
   end
 
   @doc ~S"""
-  Integer divide two numbers
+  Integer divide two numbers. Truncates to whole number. 
 
   ## Examples:
 
@@ -85,8 +89,15 @@ re
 
       iex> Intro.Arithmetic.integer_divide2(2, 4)
       0
+
+      iex> Intro.Arithmetic.integer_divide2(7, 3)
+      2
+
+      iex> Intro.Arithmetic.integer_divide2(9, 10)
+      0
   """
   def integer_divide2(a, b) do
+    div(a, b)
   end
 
   @doc ~S"""
@@ -107,6 +118,7 @@ re
       2
   """
   def round_to_integer(number) do
+    round(number)
   end
 
   @doc ~S"""
@@ -118,5 +130,6 @@ re
       0.79
   """
   def round_to_float(number, decimals) do
+    Float.round(number, decimals)
   end
 end

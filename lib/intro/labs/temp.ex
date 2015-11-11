@@ -31,6 +31,4 @@ defmodule Intro.Labs.Temp do
     reading = json["result"]
     sensor_to_farenheit(reading)
   end
-
-
 end

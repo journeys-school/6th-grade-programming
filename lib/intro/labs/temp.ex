@@ -19,7 +19,6 @@ defmodule Intro.Labs.Temp do
       |> sensor_to_voltage
       |> voltage_to_celcius
       |> celcius_to_farenheit
-
   end
 
   def read_from_sensor do

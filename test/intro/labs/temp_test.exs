@@ -20,4 +20,15 @@ defmodule Intro.Labs.TempTest do
   test "concert temperature sensor reading to farenheit" do
     assert 79.1 == Intro.Labs.Temp.sensor_to_farenheit(946)
   end
+
+  test "Temperature with farenheit" do
+    assert "79.1° F" == Temp.display_temperature(79.1)
+  end
+
+  test "Display conditional messages based on temperature" do
+    assert "Brrrr! It's chilly" == Temp.message(30)
+    assert "Mmmm. It's nice out" == Temp.message(52)
+    assert "Mmmm. It's nice out" == Temp.message(73)
+    assert "Whoa, it's hot!" == Temp.message(92)
+  end
 end

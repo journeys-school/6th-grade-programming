@@ -22,7 +22,7 @@ defmodule Intro.Labs.TempTest do
   end
 
   test "Temperature with farenheit" do
-    assert "79.1° F" == Temp.display_temperature(79.1)
+    assert "79.1° F" == Temp.to_string(79.1)
   end
 
   test "Display conditional messages based on temperature" do

@@ -7,7 +7,7 @@ defmodule Intro.StringsTest do
   end
 
   test "String injection" do
-    assert "The injected string is: foo" == Strings.inject("foo")
+    assert "The injected string is: foo!" == Strings.inject("foo")
   end
 
   test "Uppercase strings" do
@@ -25,6 +25,13 @@ defmodule Intro.StringsTest do
   test "Reverse string" do
     assert "olleh" == Strings.reverse("hello")
   end
+
+  test "String length" do
+    assert 3 == Strings.length("kai")
+  end
+
+
+
 
   ## Add tests for 3 more string functions
 end

@@ -28,4 +28,12 @@ defmodule Intro.Strings do
     String.length(a)
   end
 
+  def split(a) do
+    String.split(a,",")
+  end
+
+  def contains?(string, contents) do
+    String.contains?(string, contents)
+  end
+
 end

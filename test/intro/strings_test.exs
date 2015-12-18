@@ -30,8 +30,16 @@ defmodule Intro.StringsTest do
     assert 3 == Strings.length("kai")
   end
 
+  test "Splitting a String" do
+    assert ["foo", "bar", "baz", "hey"] == Strings.split ("foo,bar,baz,hey")
+  end
 
 
+  test "Contain" do
+    s = "Programming class is right now"
+    assert true == Strings.contains?(s, ["now", "later"])
+    assert false == Strings.contains?(s, "later")
+  end
 
   ## Add tests for 3 more string functions
 end

@@ -30,4 +30,18 @@ defmodule Intro.Labs.Temp do
     reading = json["result"]
     sensor_to_farenheit(reading)
   end
+
+  def to_string(temp) do
+    "The Temperature is #{temp}° F"
+  end
+
+  def message(temp) do
+    cond do
+      temp <= 32 -> "Brrr! It's freezing!"
+      temp > 32 and temp <= 50 -> "Oooh! It's chilly!"
+      temp > 50 and temp <= 80 -> "Mmmm. It's nice out."
+      temp > 80 -> "Whoa, it's hot!"
+
+    end
+  end
 end

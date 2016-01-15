@@ -13,4 +13,9 @@ defmodule Intro.LogicTest do
   test "relationship of two numbers is equal" do
     assert :equal == Logic.relationship(2, 2)
   end
+
+  test "quick" do
+    assert "Brrr!" == Logic.temp(28)
+    assert "Mmmmm..." == Logic.temp(42)
+  end
 end

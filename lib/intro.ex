@@ -4,17 +4,28 @@ defmodule Intro do
   plug :match
   plug :dispatch
 
-  get "/" do
-    send_resp(conn, 200, hello_html)
+  get "/hello/:name" do
+    send_resp(conn, 200, hello_html(name))
   end
 
-  def hello_html do
-    msg = hello("Journeys")
+  get "/hello" do
+    send_resp(conn, 200, hello_html("Journeys"))
+  end
+
+  get "/favicon.ico" do
+    send_resp(conn, 404, "")
+  end
+
+  def hello_html(x) do
+    msg = hello(x)
+
+    temp=Intro.Labs.Temp.read_from_sensor
 
     html = ~s(
       <html>
         <body style="text-align: center; margin-top: 50px">
           <h1>#{msg}</h1>
+          <p>#{Intro.Labs.Temp.to_string(temp)} </p>
         <body>
       </html>
     )

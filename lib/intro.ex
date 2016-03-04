@@ -60,11 +60,12 @@ defmodule Intro do
     )
   end
 
-  def run do
+  def launch_web_server do
     {:ok, _} = Plug.Adapters.Cowboy.http(Intro, [])
+    IO.puts("Open http://localhost:4000/hello in your web browser")
   end
 
-  def shutdown do
+  def shutdown_web_server do
      Plug.Adapters.Cowboy.shutdown Intro.HTTP
   end
 

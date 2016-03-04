@@ -8,12 +8,37 @@ defmodule Intro do
     send_resp(conn, 200, hello_html(name))
   end
 
-  get "/hello" do
+  get "/temperature" do
     send_resp(conn, 200, hello_html("Journeys"))
   end
 
+  get "/" do
+    send_resp(conn, 200, homepage_html)
+    end
+
   get "/favicon.ico" do
     send_resp(conn, 404, "")
+  end
+
+  def homepage_html do
+    msg = "6th Grade Programming"
+
+    html = ~s(
+      <html>
+        <head>
+          <meta http-equiv="Content-Type" Content="text/html; charset=UTF-8" />
+        </head>
+        <body style="text-align: center; margin-top: 50px">
+          <h1>#{msg}</h1>
+          <ul>
+            <li>
+              <a href= "/temperature"> Temperature</a>
+            </li>
+          </ul>
+        </body>
+      </html>
+    )
+
   end
 
   def hello_html(x) do
@@ -23,10 +48,14 @@ defmodule Intro do
 
     html = ~s(
       <html>
+        <head>
+          <meta http-equiv="Content-Type" Content="text/html; charset=UTF-8" />
+        </head>
         <body style="text-align: center; margin-top: 50px">
           <h1>#{msg}</h1>
+          <p>#{Intro.Labs.Temp.message(temp)} </p>
           <p>#{Intro.Labs.Temp.to_string(temp)} </p>
-        <body>
+        </body>
       </html>
     )
   end
